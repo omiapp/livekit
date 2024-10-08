@@ -25,8 +25,6 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/urfave/cli/v2"
-
 	"github.com/livekit/livekit-server/pkg/rtc"
 	"github.com/livekit/livekit-server/pkg/telemetry/prometheus"
 	"github.com/livekit/protocol/logger"
@@ -159,6 +157,11 @@ func main() {
 					&cli.StringFlag{
 						Name:     "identity",
 						Usage:    "identity of participant that holds the token",
+						Required: true,
+					},
+					&cli.StringFlag{
+						Name:     "config",
+						Usage:    "config path",
 						Required: true,
 					},
 					&cli.BoolFlag{
